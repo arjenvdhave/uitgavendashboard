@@ -1,0 +1,49 @@
+<html>
+<head>
+    <script type="text/javascript" src="chart.js"></script>
+</head>
+
+<body>
+    <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+        <canvas id="myChart" ></canvas>
+    </div>
+
+    <script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ["NS", "Vakantie", "Boodschappen", "Loon", "Opname van spaarrekening", "Tanken", "Overig", "Company", "Sparen", "Belastingdienst", "Kwartaal vaste lasten", "Vaste lasten"],
+            datasets: [{
+                data: [60.00, 428.75, 534.18, 4261.22, 290.00, 427.78, 3257.19, 883.20, 1680.00, 705.00, 57.52, 1805.41],
+                borderWidth: 1,
+                backgroundColor: [
+                    'red',
+                    'blue',
+                    'yellow',
+                    'green',
+                    'purple',
+                    'magenta',
+
+                    'chocolate',
+                    'cyan',
+                    'pink',
+                    'green',
+                    'grey',
+                    'orange'
+                ],
+            }]
+        },
+        options: {
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        return data.labels[tooltipItem.index] + (': €' + data.datasets[0].data[tooltipItem.index]).replace('.',',');
+                    }
+                }
+            }
+        }
+    });
+    </script>
+</body>
+</html>
