@@ -130,3 +130,7 @@ Temporary Items
 
 
 # End of https://www.gitignore.io/api/osx,node,java
+
+
+
+udbackend/src/main/resources/application.properties
